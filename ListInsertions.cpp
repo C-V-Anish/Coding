@@ -14,12 +14,12 @@ void Traversal(Node* n)
         n=n->next;
     }
 }
-void InsertAtStart(Node** head,int a)
+void InsertAtStart(Node** p,int a)
 {
     Node* new_node=new Node();
-    new_node->next=*head;
+    new_node->next=*p;
     new_node->data=a;
-    *head=new_node;  
+    *p=new_node;  
 }
 void InsertAtGivenNode(Node* n,int a,int pos)
 {
