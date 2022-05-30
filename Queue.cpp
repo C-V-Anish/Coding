@@ -33,7 +33,9 @@ void enqueue(int a)
 void dequeue()
 {
     if(front==NULL)
-    {}
+    {
+        return;
+    }
     front=front->next;
     if(front==NULL)
     rear=NULL;
@@ -58,13 +60,24 @@ int main()
         cin>>ch;
     }
     char ch1;
-    do
+    cout<<"Do you want to remove elements?[y/n]\n";
+    fflush(stdin);
+    cin>>ch1;
+    while(ch1=='y')
+    {
+        q.dequeue();
+        cout<<"Do you want to remove more?[y/n]\n";
+        fflush(stdin);
+        cin>>ch1;
+    }
+    cout<<"Rear end of the Queue is "<<(q.rear)->data;
+    cout<<"\nFront end of the Queue is "<<(q.front)->data;
+}
+ /* do
     {
         cout<<"Do you want to delete elements?[y/n]\n";
         cin>>ch1;
         q.dequeue();
-        fflush(stdin);
+        fflush(stdin);w
     }while(ch1 == 'y');
-    cout<<"Rear end of the Queue is "<<(q.rear)->data;
-    cout<<"\nFront end of the Queue is "<<(q.front)->data;
-}
+*/
