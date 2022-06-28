@@ -1,18 +1,10 @@
-void InsertAtEnd(Node** head,int a)
-{
-    Node* n=new Node();
-    n->data=a;
-    n->next=NULL;
-    if(*head==NULL)
-    {
-        *head=n;
-        return;
-    }
-    Node* temp=*head;
-    while(temp->next!=NULL)
-    {
-        temp=temp->next;
-    }
-    temp->next=n;
-    return;
-}
+Node* root = newNode(10);
+    root->left = newNode(20);
+    root->left->left = newNode(30);
+    root->left->right->left = newNode(40);
+    root->left->right->left->right = newNode(50);
+    root->right = newNode(60);
+    root->right->left = newNode(70);
+    root->right->right = newNode(80);
+    root->right->right->left = newNode(90);
+    root->right->right->right = newNode(90);
