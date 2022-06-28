@@ -1,8 +1,18 @@
-void Traversal(Node* n)
+void InsertAtEnd(Node** head,int a)
 {
-    while(n!=NULL)
+    Node* n=new Node();
+    n->data=a;
+    n->next=NULL;
+    if(*head==NULL)
     {
-        cout<<n->data<<" ";
-        n=n->next;
+        *head=n;
+        return;
     }
+    Node* temp=*head;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    temp->next=n;
+    return;
 }
