@@ -19,27 +19,28 @@ class Queue
     {
         front = rear = NULL;
     }
-void enqueue(int a)
-{
-    QueueNode* temp=new QueueNode(a);
-    if(rear==NULL)
-    front=rear=temp;
-    else
+
+    void enqueue(int a)
     {
-        rear->next=temp;
-        rear=temp;
+        QueueNode* temp=new QueueNode(a);
+        if(rear==NULL)
+        front=rear=temp;
+        else
+        {
+            rear->next=temp;
+            rear=temp;
+        }
     }
-}
-void dequeue()
-{
-    if(front==NULL)
+    void dequeue()
     {
-        return;
+        if(front==NULL)
+        {
+            return;
+        }
+        front=front->next;
+        if(front==NULL)
+        rear=NULL;
     }
-    front=front->next;
-    if(front==NULL)
-    rear=NULL;
-}
 };//end of class
 int main()
 {
